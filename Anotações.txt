@@ -200,3 +200,17 @@ do próprio HTML para ver se o campo é inválido:
     />
     <app-filho *ngIf="senha.invalid" msg="Deve ter mais que 2 caracteres.">
     </app-filho>
+
+Há um outro booleano resultante do foco no campo. Ele é chamado "touched":
+    <app-mensagem 
+        *ngIf="campoSenha.invalid && campoSenha.touched" 
+        mensagem="Senha obrigatória"
+    ></app-mensagem>
+
+Para desabilitar um botão, use a propriedade disabled mais o teste:
+    <form #loginForm="ngForm">
+        ...
+        <button [disabled]="loginForm.invalid">Login</button>
+    </form>
+
+Note que o botão só vai ser habilitado quando o formulário estiver válido.
