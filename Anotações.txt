@@ -105,3 +105,26 @@ O serviço de autenticação não teve mudanças, só teve no nome do método.
 
 LoginComponent apenas contém a lógica de apresentação dos resultados da 
 interação com o serviço de autenticação.
+
+Criação do módulo de animais + roteamento:
+    ng generate module animais --routing
+    ou
+    ng g m animais --routing
+
+Criação de ListaAnimaisComponent no módulo animais:
+    ng generate component animais/lista-animais
+    ou
+    ng g c animais/lista-animais
+
+Mais uma vez: o módulo é atualizado pelo cli do Angular depois que ele é 
+referenciado durante a criação do componente (ListaAnimaisComponent é 
+referenciado em AnimaisModule, por causa do prefixo correspondente ao nome
+do módulo em animais/lista-animais).
+
+O método de login em LoginComponent vai usar um objeto do tipo Router, para
+redirecionar as requisições para as rotas da aplicação.
+
+Cada novo módulo precisa ser importado em AppRoutingModule, para centralizar
+as referências para as rotas espalhadas pelos outros módulos.
+
+O código de ListaAnimaisComponent não sofreu alterações depois de gerado.
