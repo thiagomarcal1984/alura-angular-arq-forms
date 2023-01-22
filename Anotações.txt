@@ -86,3 +86,22 @@ em template.
 
 LoginComponent.ts foi modificado para acrescentar um método e dois modelos que
 vão interagir com o HTML do componente.
+
+O curso não explicou o desenvolvimento da API, mas o código fonte está 
+disponível na pasta api (fora de gatitobook). Para rodar o webservice, 
+execute os comandos a partir da pasta api:
+    npm install (para baixar as dependências)
+    npm start   (para executar a API na porta 3000. Informações de usuário 
+                vão estar aparecendo no log da linha de comando.)
+
+De acordo com a documentação do HttpClientModule, ele: 
+    Configures the dependency injector for HttpClient with supporting services
+    for XSRF. Automatically imported by HttpClientModule.
+
+Por conta dessas configurações de injeção de dependência, precisamos importar
+o módulo HttpClientModule no arquivo ts de AppModule.
+
+O serviço de autenticação não teve mudanças, só teve no nome do método.
+
+LoginComponent apenas contém a lógica de apresentação dos resultados da 
+interação com o serviço de autenticação.
