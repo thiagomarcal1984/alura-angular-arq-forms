@@ -1,0 +1,4 @@
+Criando o projeto: 
+    ng new gatitobook --strict
+
+O parm strict força tipagem estática (tanto no TypeScript quanto no Angular).
