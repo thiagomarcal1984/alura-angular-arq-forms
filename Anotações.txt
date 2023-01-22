@@ -33,3 +33,7 @@ são idênticos:
 
 A criação do componente home usando o cli auto-atualiza o home.module.ts.
 Talvez porque os nomes do módulo e do componentes são iguais.
+
+Os arquivos estáticos ficam dentro da pasta assets. Essa pasta é setada por 
+padrão no arquivo angular.json, e a referência pode ser modificada.
+    Busque em projects-> gatitobook -> architect -> build -> options -> assets.
