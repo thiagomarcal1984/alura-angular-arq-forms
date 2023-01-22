@@ -8,3 +8,28 @@ Instalação do Bootstrap e do Font-Awesome:
 
 Mude o arquivo angular.json e inclua os CSS do Font-Awesome e do Bootstrap:
     Busque em projects-> gatitobook -> architect -> build -> options -> styles.
+
+No angular.json, o parâmetro cli -> analytics = false é pra evitar envio de 
+dados para o Google. Isso é colocado
+
+Comando para criar um módulo com roteamento:
+    ng generate module home --routing --dry-run
+    ou
+    ng generate module home --routing -d
+
+    Onde:
+        * routing significa que o desejamos usar roteamento, e
+        * dry-run significa que não queremos que os arquivos sejam gerados (?).
+Para criar de fato o módulo, retire o parâmetro dry-run
+
+
+A comunidade Angular tem vários tipos de módulo: o componente home que criamos
+é classificado como um feature module (módulo de funcionalidade).
+
+O cli do Angular permite abreviação dos comandos. Então, os comandos a seguir 
+são idênticos:
+    ng generate component home
+    ng g c home
+
+A criação do componente home usando o cli auto-atualiza o home.module.ts.
+Talvez porque os nomes do módulo e do componentes são iguais.
