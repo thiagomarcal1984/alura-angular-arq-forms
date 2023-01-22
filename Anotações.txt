@@ -42,3 +42,14 @@ Alternativa para rodar a aplicação:
     ng s --o
     ou
     ng serve --open
+
+O parâmetro loadChildren dentro de um Route recebe um módulo. No exemplo, o
+módulo é obtido por meio de função que carrega as rotas de um outro módulo.
+Isso é interessante porque a função não carrega os módulos enquanto não for
+chamada (lazy loading).
+
+Perceba que as rotas de AppModule e HomeModule são diferentes. AppModule mantém
+o lazy loading, enquanto o HomeModule carrega de fato os componentes.
+
+A tag router-outlet serve como container para os componentes, que são 
+exibidos de acordo com a sua rota.

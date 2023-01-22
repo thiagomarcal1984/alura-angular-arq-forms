@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HomeModule,
+    // HomeModule, // HomeModule será importado nas rotas (lazy loading).
   ],
   providers: [],
   bootstrap: [AppComponent]
