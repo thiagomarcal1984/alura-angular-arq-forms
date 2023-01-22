@@ -2,3 +2,9 @@ Criando o projeto:
     ng new gatitobook --strict
 
 O parm strict força tipagem estática (tanto no TypeScript quanto no Angular).
+
+Instalação do Bootstrap e do Font-Awesome:
+    npm install bootstrap font-awesome
+
+Mude o arquivo angular.json e inclua os CSS do Font-Awesome e do Bootstrap:
+    Busque em projects-> gatitobook -> architect -> build -> options -> styles.
