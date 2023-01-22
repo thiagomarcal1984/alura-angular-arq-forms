@@ -160,3 +160,43 @@ conter o componente com a anotação Input()).
 
 Lembrando: um componente de um módulo só fica visível se o módulo o exportar.
 Veja o parâmetro exports dentro da anotação @NgModule em MensagemModule.
+
+NgModules: 
+    declarations é um array de COMPONENTES;
+    imports é um array de MÓDULOS que ficam visíveis para os templates.
+
+MensagemModule está sendo importado e com ele os seus componentes. Note que 
+o MensagemComponent não foi importado em HomeModule, mas ainda assim o template
+LoginComponent consegue inserir o MensagemComponent.
+
+Uma propriedade com qualquer nome precedido de cerquilha serve para criar uma 
+referência para o Angular. Essa propriedade é tipada conforme o valor que você
+atribuir em seguida. No exemplo, o input é nomeado como campoUsuario e 
+representa um ngModel: 
+    <input
+      ...
+      [(ngModel)]="variavel_no_componente"
+      ...
+      #campoComponente="ngModel"
+      ...
+    />
+
+Essa referência #campoComponente pode ser usada para outras diretivas, como
+a ngIf: 
+    <app-filho *ngIf="campoComponente.invalid" msg="Inválido."></app-filho>
+    // O segundo dá erro de compilação.
+    <app-filho *ngIf="campoComponente.value !== senha" msg="Inválido.">
+    </app-filho>
+
+Como personalizar mais a validação? Basta inserir critérios de validação 
+do próprio HTML para ver se o campo é inválido:
+
+    <input
+      ...
+      [(ngModel)]="variavel_no_componente"
+      #senha="ngModel"
+      minlength="3"
+      ...
+    />
+    <app-filho *ngIf="senha.invalid" msg="Deve ter mais que 2 caracteres.">
+    </app-filho>
