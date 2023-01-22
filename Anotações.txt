@@ -128,3 +128,35 @@ Cada novo módulo precisa ser importado em AppRoutingModule, para centralizar
 as referências para as rotas espalhadas pelos outros módulos.
 
 O código de ListaAnimaisComponent não sofreu alterações depois de gerado.
+
+Criação do módulo de mensagem dentro do diretório componentes:
+    ng generate module componentes/mensagem
+    ou
+    ng g m componentes/mensagem
+
+MensagemModule é criado dentro da subpasta componentes 
+(veja o prefixo componentes/mensagem na criação).
+
+Idem para a criação do componente:
+    ng generate component componentes/mensagem
+    ou
+    ng g c componentes/mensagem
+
+De novo: ao usar o cli do Angular para criar um componente dentro do diretório
+de um módulo, o .ts do módulo é atualizado com a declaração do componente
+recém criado.
+
+Interpolação de conteúdo: usar {{ variavel }} para expor conteúdo dos .ts
+para os arquivos .html.
+
+Em https://angular.io/guide/interpolation :
+Interpolation refers to embedding expressions into marked up text. By default,
+interpolation uses the double curly braces {{ and }} as delimiters.
+
+
+O decorator Input() - lembre-se dos parênteses - serve para configurar a 
+variável como um objeto modificável pelo componente pai (o mesmo que vai 
+conter o componente com a anotação Input()).
+
+Lembrando: um componente de um módulo só fica visível se o módulo o exportar.
+Veja o parâmetro exports dentro da anotação @NgModule em MensagemModule.
