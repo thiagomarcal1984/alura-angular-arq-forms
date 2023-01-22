@@ -53,3 +53,15 @@ o lazy loading, enquanto o HomeModule carrega de fato os componentes.
 
 A tag router-outlet serve como container para os componentes, que são 
 exibidos de acordo com a sua rota.
+
+Criando o componente de login dentro do módulo home: 
+    ng generate component home/login
+    ou
+    ng g c home/login
+
+Não confunda: as rotas ficam guardadas no módulo de roteamento, não no
+módulo principal. Ex.: HomeRoutingModule tem as rotas; HomeModule as importa.
+
+O parâmetro children nas rotas serve para inclusão de sub-rotas. No exemplo, 
+a sub rota para LoginComponent corresponde a uma string vazia. Para cada 
+componente com rotas children devemos usar uma tag router-outlet no HTML.
