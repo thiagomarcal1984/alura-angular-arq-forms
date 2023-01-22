@@ -65,3 +65,17 @@ módulo principal. Ex.: HomeRoutingModule tem as rotas; HomeModule as importa.
 O parâmetro children nas rotas serve para inclusão de sub-rotas. No exemplo, 
 a sub rota para LoginComponent corresponde a uma string vazia. Para cada 
 componente com rotas children devemos usar uma tag router-outlet no HTML.
+
+Criando o módulo de autenticação:
+    ng generate module autenticacao
+    ou
+    ng g m autenticacao
+
+Criando o serviço de autenticação no módulo de autenticação:
+    ng generate service autenticacao/autenticacao
+    ou
+    ng g s autenticacao/autenticacao
+
+O objeto httpClient (em '@angular/common/http') contém métodos para as 
+mensagens HTTP (POST, GET etc). Cada método desses recebe dois parâmetros:
+a URL e o corpo da requisição (do tipo any, mas aqui usamos um dicionário).
