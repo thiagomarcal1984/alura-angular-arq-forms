@@ -79,3 +79,10 @@ Criando o serviço de autenticação no módulo de autenticação:
 O objeto httpClient (em '@angular/common/http') contém métodos para as 
 mensagens HTTP (POST, GET etc). Cada método desses recebe dois parâmetros:
 a URL e o corpo da requisição (do tipo any, mas aqui usamos um dicionário).
+
+O Angular trata formulário de uma das duas maneiras: forms template-driven, e 
+forms reativos. O módulo FormsModule é usado para criar formulários baseados
+em template.
+
+LoginComponent.ts foi modificado para acrescentar um método e dois modelos que
+vão interagir com o HTML do componente.
