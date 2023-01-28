@@ -316,3 +316,24 @@ As validações personalizadas consistem em manipular o value desse controle.
 
 Note que no template "minusculoValidator" é resumido a "minusculo". No arquivo 
 .ts a referência precisa ser completa.
+
+O array das propriedades de um FormBuilder.group é um dicionário cujos valores
+são compostos de uma string vazia (não sei pra que serve), um array de 
+validadores síncronos e outro array de validadores assíncronos.
+
+    this.formBuilder.group({
+        chave : [
+            '',
+            [... validadores síncronos ... ],
+            [... validadores assíncronos ... ],
+        ]
+    })
+
+*** Essa parte do curso está MUITO, MUITO mal explicada. ***
+
+No fim das contas, o template faz o ngIf baseado na variável usuarioExistente,
+que foi declarada como retorno no operador map em UsuarioExisteService
+
+O método usuarioJaExiste é inserido como validador do nome de usuário. 
+A sintaxe é diferente dos validadores: neles não há invocação de método. Já 
+o método usuarioJaExiste precisa ser invocado para funcionar como validador.
