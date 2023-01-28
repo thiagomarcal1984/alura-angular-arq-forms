@@ -337,3 +337,18 @@ que foi declarada como retorno no operador map em UsuarioExisteService
 O método usuarioJaExiste é inserido como validador do nome de usuário. 
 A sintaxe é diferente dos validadores: neles não há invocação de método. Já 
 o método usuarioJaExiste precisa ser invocado para funcionar como validador.
+
+O operador ?? define um retorno padrão, caso retorne nulo ou undefined:
+    objeto?.value ?? 'Valor padrão';
+
+Validações do formulário inteiro ao invés de validar campos individualmente se
+faz fornecendo um dicionário que contenha uma chave validators, com os valores
+correspondentes aos validators que você deseja usar/implementar:
+    this.novoUsuarioForm = this.formBuilder.group(
+        {
+            ... validadores por campo...
+        },
+        {
+            validators: [validador1, validador2 ...]
+        }
+    );
