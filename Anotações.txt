@@ -246,3 +246,47 @@ Criação da interface NovoUsuarioInterface (facilitar tipagem):
 
 O serviço injeta no contrutor o objeto HttpClient (em @angular/common/http),
 para fazer requisições HTTP.
+
+Reactive-driven form (não um Template-driven form).
+
+Exclamation mark = non-null assertion operator. Serve para permitir valores
+nulos para uma variável TypeScript, mesmo que as configurações do TypeScript
+forcem a definição de um valor:
+    novoUsuarioForm!: FormGroup;
+
+Double exclamation mark: converter um objeto TypeScript para booleano:
+    // https://blog.logrocket.com/understanding-exclamation-mark-typescript/
+    const emptyStr = ''
+    const nonEmptyStr = 'test'
+
+    const emptyStrBool = !!emptyStr //false
+    const nonEmptyStrBool = !!nonEmptyStr //true
+
+NÃO INCLUA CÓDIGO NO CONSTRUTOR DO ANGULAR. Ao invés disso, use os métodos
+das interfaces de ciclo de vida do Angular (a interface OnInit, por exemplo,
+é onde definimos os parâmetros de inicialização do objeto Angular).
+
+O método group em FormBuilder recebe um dicionário, cujos valores serão arrays.
+Cada array vai servir para validar os campos cujos nomes estão nas chaves.
+
+O ideal é que o dicionário fornecido para formBuilder.group() contenha os
+campos da interface que queremos representar posteriormente.
+
+    ngOnInit(): void {
+        this.novoUsuarioForm = this.formBuilder.group({
+            email: [''],
+            fullName: [''],
+            userName: [''],
+            password: [''],
+        })
+    }
+
+    cadastrar() {
+        const novoUsuario = this.novoUsuarioForm.getRawValue() as NovoUsuario;
+    }
+
+Repare na notação para o casting no método cadastrar (as NovoUsuario).
+
+Para usar o FormGroup no template, use a diretiva [formGroup] na tag do form.
+Para cada input no HTML aplicamos uma propriedade formControlName com os mesmos
+nomes do dicionário no FormGroup (parecido com o do ngModel, mas sem [()]).
