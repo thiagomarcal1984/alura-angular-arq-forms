@@ -290,3 +290,23 @@ Repare na notação para o casting no método cadastrar (as NovoUsuario).
 Para usar o FormGroup no template, use a diretiva [formGroup] na tag do form.
 Para cada input no HTML aplicamos uma propriedade formControlName com os mesmos
 nomes do dicionário no FormGroup (parecido com o do ngModel, mas sem [()]).
+
+Para cada campo no FormGroup podemos fornecer um array de validadores.
+No módulo @angular/forms há a classe Validator, útil para este array.
+
+O uso de interrogação/ponto (?.) é o chamado de optional chaining. Isso serve
+como um curto-circuito para evitar erros de compilação (retorna undefined ao
+invés de null e não busca os métodos seguintes).
+
+A sintaxe para testar erros de FormGroup no template é a seguinte:
+    nome_do_formGroup.get('nome_d _campo')?.errors?.['nome_do_validador']
+
+    Ex.:
+    <app-mensagem
+      *ngIf="
+        novoUsuarioForm.get('email')?.errors?.['required']
+        && novoUsuarioForm.get('email')?.touched
+      "
+      mensagem="E-mail obrigatório."
+    />
+

@@ -5,25 +5,50 @@
     <input
       placeholder="e-mail"
       class="form-control"
-      formControlName="email">
+      formControlName="email"
+    />
+    <app-mensagem
+      *ngIf="
+        novoUsuarioForm.get('email')?.errors?.['required']
+        && novoUsuarioForm.get('email')?.touched
+      "
+      mensagem="E-mail obrigatório."
+    />
+    <app-mensagem
+      *ngIf="
+        novoUsuarioForm.get('email')?.errors?.['email']
+        && novoUsuarioForm.get('email')?.touched
+      "
+      mensagem="E-mail no formato incorreto."
+    />
   </div>
   <div class="form-group">
     <input
       placeholder="Nome Completo"
       class="form-control"
-      formControlName="fullName">
+      formControlName="fullName"
+    />
+    <app-mensagem
+      *ngIf="
+        novoUsuarioForm.get('fullName')?.errors
+        && novoUsuarioForm.get('fullName')?.touched
+      "
+      mensagem="Nome incorreto"
+    />
   </div>
   <div class="form-group">
     <input
       placeholder="Usuário"
       class="form-control"
-      formControlName="userName">
+      formControlName="userName"
+    />
   </div>
   <div class="form-group">
     <input
       type="password" placeholder="Senha"
       class="form-control"
-      formControlName="password">
+      formControlName="password"
+    />
   </div>
   <button class="btn btn-primary">
     Cadastro
