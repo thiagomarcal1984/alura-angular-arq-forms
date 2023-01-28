@@ -233,3 +233,16 @@ ou um caminho relativo:
 Uma pequena mudança no formulário de login: as classe d-grid e gap-2. A ideia
 é espaçar os elementos (gap) entre os componentes dentro do (d-)grid, sem 
 precisar aplicar estilos nos vários componentes-filho.
+
+Criação do serviço NovoUsuarioService:
+    ng generate service home/novo-usuario/novo-usuario
+    ou
+    ng g s home/novo-usuario/novo-usuario
+
+Criação da interface NovoUsuarioInterface (facilitar tipagem):
+    ng genereate interface home/novo-usuario/novo-usuario
+    ou 
+    ng g i home/novo-usuario/novo-usuario
+
+O serviço injeta no contrutor o objeto HttpClient (em @angular/common/http),
+para fazer requisições HTTP.
