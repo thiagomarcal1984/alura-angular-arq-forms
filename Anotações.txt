@@ -214,3 +214,10 @@ Para desabilitar um botão, use a propriedade disabled mais o teste:
     </form>
 
 Note que o botão só vai ser habilitado quando o formulário estiver válido.
+
+Criação do componente home/novo-usuario:
+    ng generate component home/novo-usuario
+    ou 
+    ng g c home/novo-usuario
+
+Criação de nova rota para o novo componente em home-routing.module.ts.
