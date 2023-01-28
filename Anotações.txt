@@ -310,3 +310,9 @@ A sintaxe para testar erros de FormGroup no template é a seguinte:
       mensagem="E-mail obrigatório."
     />
 
+A criação de minusculo.validator.ts foi manual. Não há comando no angular-cli.
+A função de validação recebe como parâmetro um @angular/forms/AbstractControl.
+As validações personalizadas consistem em manipular o value desse controle.
+
+Note que no template "minusculoValidator" é resumido a "minusculo". No arquivo 
+.ts a referência precisa ser completa.
