@@ -221,3 +221,15 @@ Criação do componente home/novo-usuario:
     ng g c home/novo-usuario
 
 Criação de nova rota para o novo componente em home-routing.module.ts.
+
+O atributo [routerLink] recebe um array. Geralmente é com um único parâmetro,
+que seria o nome da rota. Esse nome da rota poderia ser um caminho absoluto
+ou um caminho relativo:
+    Caminho absoluto (partindo da raiz da aplicação):
+        <a [routerLink]="['/home/novo-usuario']">Cadastre-se</a>
+    Caminho relativo (perceba a ausência da barra no início):
+        <a [routerLink]="['novo-usuario']">Cadastre-se</a>
+
+Uma pequena mudança no formulário de login: as classe d-grid e gap-2. A ideia
+é espaçar os elementos (gap) entre os componentes dentro do (d-)grid, sem 
+precisar aplicar estilos nos vários componentes-filho.
