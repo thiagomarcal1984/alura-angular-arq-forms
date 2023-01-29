@@ -364,3 +364,11 @@ Criação do serviço de autenticação:
     ng g s autenticacao/token
 
 O serviço de autenticação guardará informações do token JWT no localstorage.
+
+Geração do serviço de autenticacao do usuário: 
+    ng generate service autenticacao/usuario/usuario
+    ou
+    ng g s autenticacao/usuario/usuario
+
+Geração da interface de autenticacao do usuário: 
+    ng generate service autenticacao/usuario/usuario
