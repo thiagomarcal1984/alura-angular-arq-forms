@@ -436,3 +436,10 @@ Explicações do template do cabeçalho:
 
 <ng-template #login>
 // Template que por padrão não é exibido. Ele só aparece em if/else.
+
+Repetindo: se o RouterModule não for importado no módulo que contém o 
+componente, o template HTML do componente não conseguirá acessar as 
+propriedades de [routerLink]="['']".
+
+Repetindo também: se um módulo X não exporta seus componentes, eles não ficam
+disponíveis para os módulos externos que importarem esse módulo X.

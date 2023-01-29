@@ -1,3 +1,5 @@
+import { RodapeModule } from './componentes/rodape/rodape.module';
+import { CabecalhoModule } from './componentes/cabecalho/cabecalho.module';
 // import { HomeModule } from './home/home.module'; // Lazy loading.
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -15,6 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     // HomeModule, // HomeModule será importado nas rotas (lazy loading).
     HttpClientModule,
+    CabecalhoModule,
+    RodapeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
