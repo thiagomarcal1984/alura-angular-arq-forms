@@ -388,3 +388,51 @@ O RxJS trabalha com operadores (just functions), que no caso são de dois tipos:
 O operador tap serve para disparar side-effects, para disparar notificações 
 do Observable. Faz alguma coisa separada da função principal (?). O operador
 tap só funciona dentro do método pipe do Observable.
+
+Criação do módulo de cabeçalho:
+    ng generate module componentes/cabecalho
+    ou
+    ng g m componentes/cabecalho
+
+Criação do comopnente de cabeçalho:
+    ng generate component componentes/cabecalho
+    ou
+    ng g c componentes/cabecalho
+
+Ao declarar Observables, insira um cifrão no fim do nome da variável:
+    meuObservable$ = metodoDeCriacaoDoObservable();
+Isso é um padrão da comunidade do Angular.
+
+Se o módulo cabecalho não importar o RouterModule, a propriedade [routerLink]
+não fica acessível para o template, e dá erro de compilação.
+
+O componente de cabeçalho só fica disponível depois de o módulo que o 
+contém exportá-lo.
+
+Explicações do template do cabeçalho: 
+    <nav class="navbar navbar-light bg-white">
+        <div *ngIf="user$ | async as user">
+            <div *ngIf="user.name; else login">
+                ... informações e links se logado...
+            </div>
+        </div>
+    </nav>
+    <ng-template #login>
+        <span class="navbar-text">
+            <a [routerLink]="['']">Login</a>
+        </span>
+    </ng-template>
+
+
+<div *ngIf="user$ | async as user">
+// Busca o Observable user$ no componente. O pipe async assina (subscribe)
+//  o Observable. Depois o Observable subscrito é renomeado para user. O 
+// nome user será a referência no template. Se não houver o Observable user$,
+// esta div não é exibida.
+
+<div *ngIf="user.name; else login">
+// O que estiver na div é a condição verdadeira. Do contrário, 
+// o ng-template chamado "login" será usado no lugar.
+
+<ng-template #login>
+// Template que por padrão não é exibido. Ele só aparece em if/else.
