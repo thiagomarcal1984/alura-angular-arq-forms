@@ -372,3 +372,19 @@ Geração do serviço de autenticacao do usuário:
 
 Geração da interface de autenticacao do usuário: 
     ng generate service autenticacao/usuario/usuario
+
+Do jeito como a requisição post HTTP para autenticação estava, não era possível
+obter o header com o token JWT. Então foi necessário mudar o Observable 
+retornado para que ele contenha um HttpResponse.
+
+O post de httpClient precisa de mais um dicionário de opções, com a chave 
+'observe' e o valor 'response'.
+
+O RxJS trabalha com operadores (just functions), que no caso são de dois tipos:
+    1)  Pipeable operators: sua invocação não muda os Observables, mas 
+        retorna outro Observable.
+    2)  Creation operators: serve para... criar Observables.
+
+O operador tap serve para disparar side-effects, para disparar notificações 
+do Observable. Faz alguma coisa separada da função principal (?). O operador
+tap só funciona dentro do método pipe do Observable.
