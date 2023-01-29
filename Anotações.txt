@@ -254,13 +254,13 @@ nulos para uma variável TypeScript, mesmo que as configurações do TypeScript
 forcem a definição de um valor:
     novoUsuarioForm!: FormGroup;
 
-Double exclamation mark: converter um objeto TypeScript para booleano:
+Double exclamation mark: converte um objeto TypeScript para booleano:
     // https://blog.logrocket.com/understanding-exclamation-mark-typescript/
     const emptyStr = ''
     const nonEmptyStr = 'test'
 
-    const emptyStrBool = !!emptyStr //false
-    const nonEmptyStrBool = !!nonEmptyStr //true
+    const emptyStrBool      = !!emptyStr //false
+    const nonEmptyStrBool   = !!nonEmptyStr //true
 
 NÃO INCLUA CÓDIGO NO CONSTRUTOR DO ANGULAR. Ao invés disso, use os métodos
 das interfaces de ciclo de vida do Angular (a interface OnInit, por exemplo,
@@ -352,3 +352,15 @@ correspondentes aos validators que você deseja usar/implementar:
             validators: [validador1, validador2 ...]
         }
     );
+
+Instalação de ferramentas para decodificar tokens JWT (JSON Web Token):
+    npm install jwt-decode
+    ou
+    npm i jwt-decode
+
+Criação do serviço de autenticação: 
+    ng generate service autenticacao/token
+    ou
+    ng g s autenticacao/token
+
+O serviço de autenticação guardará informações do token JWT no localstorage.
